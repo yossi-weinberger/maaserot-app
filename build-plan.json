@@ -1,0 +1,350 @@
+{
+  "id": "2jcddGGaHKWGW4nq6i69QzrsmVq",
+  "version": "1",
+  "turboVersion": "2.0.9",
+  "monorepo": true,
+  "globalCacheInputs": {
+    "rootKey": "I can’t see ya, but I know you’re here",
+    "files": {},
+    "hashOfExternalDependencies": "35c2ca82bbfb6ef6",
+    "hashOfInternalDependencies": "",
+    "environmentVariables": {
+      "specified": {
+        "env": [],
+        "passThroughEnv": null
+      },
+      "configured": [],
+      "inferred": [],
+      "passthrough": null
+    },
+    "engines": null
+  },
+  "packages": [
+    "api-client",
+    "core",
+    "maaserot-desktop",
+    "ui",
+    "web"
+  ],
+  "envMode": "strict",
+  "frameworkInference": true,
+  "tasks": [
+    {
+      "taskId": "api-client#build",
+      "task": "build",
+      "package": "api-client",
+      "hash": "6c1f251e8e906d8d",
+      "inputs": {
+        "package.json": "a8117972a707ddd64772a19666c4b934db639cbc"
+      },
+      "hashOfExternalDependencies": "459c029558afe716",
+      "cache": {
+        "local": false,
+        "remote": false,
+        "status": "MISS",
+        "timeSaved": 0
+      },
+      "command": "<NONEXISTENT>",
+      "cliArguments": [],
+      "outputs": [
+        ".next/**",
+        "dist/**"
+      ],
+      "excludedOutputs": null,
+      "logFile": "packages\\api-client\\.turbo\\turbo-build.log",
+      "directory": "packages\\api-client",
+      "dependencies": [],
+      "dependents": [],
+      "resolvedTaskDefinition": {
+        "outputs": [
+          ".next/**",
+          "dist/**"
+        ],
+        "cache": true,
+        "dependsOn": [
+          "^build"
+        ],
+        "inputs": [],
+        "outputLogs": "full",
+        "persistent": false,
+        "env": [],
+        "passThroughEnv": null,
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": null
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": null
+      }
+    },
+    {
+      "taskId": "core#build",
+      "task": "build",
+      "package": "core",
+      "hash": "9e65a7a2bd2a7b41",
+      "inputs": {
+        "package.json": "0458dc74314b4c78e93373ec9c4e91f4b2ef8989"
+      },
+      "hashOfExternalDependencies": "459c029558afe716",
+      "cache": {
+        "local": false,
+        "remote": false,
+        "status": "MISS",
+        "timeSaved": 0
+      },
+      "command": "<NONEXISTENT>",
+      "cliArguments": [],
+      "outputs": [
+        ".next/**",
+        "dist/**"
+      ],
+      "excludedOutputs": null,
+      "logFile": "packages\\core\\.turbo\\turbo-build.log",
+      "directory": "packages\\core",
+      "dependencies": [],
+      "dependents": [],
+      "resolvedTaskDefinition": {
+        "outputs": [
+          ".next/**",
+          "dist/**"
+        ],
+        "cache": true,
+        "dependsOn": [
+          "^build"
+        ],
+        "inputs": [],
+        "outputLogs": "full",
+        "persistent": false,
+        "env": [],
+        "passThroughEnv": null,
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": null
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": null
+      }
+    },
+    {
+      "taskId": "maaserot-desktop#build",
+      "task": "build",
+      "package": "maaserot-desktop",
+      "hash": "bf31b3e32cd9c23e",
+      "inputs": {
+        "main.js": "c2313ffb9a2feb5d0b0cfad9f14888e044d7cf28",
+        "package.json": "e56a465c82f1240a8be929491519304bbde7bc49",
+        "pnpm-lock.yaml": "f901178ed331879458ebd265695d54a5d8b27bf5",
+        "release/builder-debug.yml": "331410c3b361fb28a4117e43357c065520c19055",
+        "release/win-unpacked/resources.pak": "074b41a4e23c551bbcef6ed58054f1c94cff7cc9",
+        "release/win-unpacked/resources/app.asar": "cf136c3f7af542e0e5a6d10aecdcf9e480c83313",
+        "release/win-unpacked/snapshot_blob.bin": "c5c547e9f6bc3f5eb484f6f47d23b7800d95a2ac",
+        "release/win-unpacked/v8_context_snapshot.bin": "53ed1b20c269b75bbf31deaf80c45fe59055c40d",
+        "release/win-unpacked/vk_swiftshader.dll": "01f7416550e64b665deaa73be91aa2f4fbce244e",
+        "release/win-unpacked/vk_swiftshader_icd.json": "525fbc5a960d67da25bd416c19a35043313e9486",
+        "release/win-unpacked/vulkan-1.dll": "0ce0c3c385cdb5b8e129d18455d68b8434e37d24",
+        "src/preload.js": "03fe2bd75371934b2841900e551ea693d2c670cb",
+        "src/renderer/App.tsx": "0067ffd19578ede339dcbebf54d2da03f78ed889",
+        "src/renderer/index.html": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "src/renderer/index.js": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      "hashOfExternalDependencies": "5b175200ab3845cf",
+      "cache": {
+        "local": false,
+        "remote": false,
+        "status": "MISS",
+        "timeSaved": 0
+      },
+      "command": "pnpm run build:web && electron-builder --dir",
+      "cliArguments": [],
+      "outputs": [
+        ".next/**",
+        "dist/**"
+      ],
+      "excludedOutputs": null,
+      "logFile": "apps\\desktop\\.turbo\\turbo-build.log",
+      "directory": "apps\\desktop",
+      "dependencies": [],
+      "dependents": [],
+      "resolvedTaskDefinition": {
+        "outputs": [
+          ".next/**",
+          "dist/**"
+        ],
+        "cache": true,
+        "dependsOn": [
+          "^build"
+        ],
+        "inputs": [],
+        "outputLogs": "full",
+        "persistent": false,
+        "env": [],
+        "passThroughEnv": null,
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": null
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": null
+      }
+    },
+    {
+      "taskId": "ui#build",
+      "task": "build",
+      "package": "ui",
+      "hash": "d762637381345811",
+      "inputs": {
+        "components/DesktopOnlyComponent.js": "77a8394e7084009c98b68ca4297a455a30e22276",
+        "package.json": "7079059f76fe3f114fc4206f95f7f3ac94cf966c",
+        "src/SharedHeader.tsx": "838fb2f92e773370c549f68104ac0f331501b686",
+        "src/index.ts": "5922dbf54b4f91536d303f42a8e1bc4e866acb55"
+      },
+      "hashOfExternalDependencies": "459c029558afe716",
+      "cache": {
+        "local": false,
+        "remote": false,
+        "status": "MISS",
+        "timeSaved": 0
+      },
+      "command": "<NONEXISTENT>",
+      "cliArguments": [],
+      "outputs": [
+        ".next/**",
+        "dist/**"
+      ],
+      "excludedOutputs": null,
+      "logFile": "packages\\ui\\.turbo\\turbo-build.log",
+      "directory": "packages\\ui",
+      "dependencies": [],
+      "dependents": [],
+      "resolvedTaskDefinition": {
+        "outputs": [
+          ".next/**",
+          "dist/**"
+        ],
+        "cache": true,
+        "dependsOn": [
+          "^build"
+        ],
+        "inputs": [],
+        "outputLogs": "full",
+        "persistent": false,
+        "env": [],
+        "passThroughEnv": null,
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": null
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": null
+      }
+    },
+    {
+      "taskId": "web#build",
+      "task": "build",
+      "package": "web",
+      "hash": "26013edd5498adc1",
+      "inputs": {
+        ".eslintrc.json": "bffb357a7122523ec94045523758c4b825b448ef",
+        ".gitignore": "fd3dbb571a12a1c3baf000db049e141c888d05a8",
+        "README.md": "c4033664f80d3cb9cb687fb5facbc82aedb302f6",
+        "app/components/ElectronWrapper.jsx": "f44376c99c2c27fe3c008bfdeeeeb9e6ead29314",
+        "app/components/SharedComponent.jsx": "677bcd569eef32efa9eb929678e1b293806fb418",
+        "app/components/WebOnlyComponent.jsx": "7408894d1a1351f5562a6656262115faef163cac",
+        "app/components/WebWrapper.jsx": "be83bbf0f57678eb32f02ef7f35498b013c4bfae",
+        "app/favicon.ico": "718d6fea4835ec2d246af9800eddb7ffb276240c",
+        "app/globals.css": "f4bd77c0ccacd185f097e1fe5a2975992fb989a1",
+        "app/layout.tsx": "60051830ad931546aa2d20e64b16945e705092e8",
+        "app/page.module.css": "5c4b1e6a2c6140ac795304136228ecf7dd877143",
+        "app/page.tsx": "9d6039897136e8cc51a887ec07a6ac78c3bd5306",
+        "app/test/page.tsx": "e2912e047d138b0b7cc1c337dff1d8d233754b03",
+        "next.config.mjs": "3004a06d4422e3fedab73fea08981fa6356f3ba4",
+        "package.json": "591fd52ec19cdc87eb1eea6cd7797cdb35d6c1a7",
+        "pnpm-lock.yaml": "16ae381f724d13c180568e7aecfe2e93416ff987",
+        "public/next.svg": "5174b28c565c285e3e312ec5178be64fbeca8398",
+        "public/vercel.svg": "d2f84222734f27b623d1c80dda3561b04d1284af",
+        "tsconfig.json": "2baa7cde8fc1182ac0c5698778673ac9dfb07400"
+      },
+      "hashOfExternalDependencies": "5a48d7331d7a68e7",
+      "cache": {
+        "local": false,
+        "remote": false,
+        "status": "MISS",
+        "timeSaved": 0
+      },
+      "command": "next build",
+      "cliArguments": [],
+      "outputs": [
+        ".next/**",
+        "dist/**"
+      ],
+      "excludedOutputs": null,
+      "logFile": "apps\\web\\.turbo\\turbo-build.log",
+      "directory": "apps\\web",
+      "dependencies": [],
+      "dependents": [],
+      "resolvedTaskDefinition": {
+        "outputs": [
+          ".next/**",
+          "dist/**"
+        ],
+        "cache": true,
+        "dependsOn": [
+          "^build"
+        ],
+        "inputs": [],
+        "outputLogs": "full",
+        "persistent": false,
+        "env": [],
+        "passThroughEnv": null,
+        "interactive": false
+      },
+      "expandedOutputs": [],
+      "framework": "nextjs",
+      "envMode": "strict",
+      "environmentVariables": {
+        "specified": {
+          "env": [],
+          "passThroughEnv": null
+        },
+        "configured": [],
+        "inferred": [],
+        "passthrough": null
+      }
+    }
+  ],
+  "user": "",
+  "scm": {
+    "type": "git",
+    "sha": "690668be73f225a636ef67cafc8ccff3d1fdc9a4",
+    "branch": "desktop-app-build"
+  }
+}
+

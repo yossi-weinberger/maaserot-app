@@ -25,7 +25,7 @@ function createWindow() {
   win.loadURL(startUrl);
 
   if (process.env.NODE_ENV === "development") {
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools(); //openDevTools by default
   }
 }
 

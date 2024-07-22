@@ -1,13 +1,8 @@
 "use client";
 
 import React from "react";
-import { useIsElectron } from "./ElectronWrapper";
 
 const WebOnlyComponent = () => {
-  const isElectron = useIsElectron();
-
-  if (isElectron) return null;
-
   return (
     <div>
       <h2>קומפוננטה רק לאתר</h2>
