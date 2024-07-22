@@ -1,0 +1,30 @@
+{
+  "name": "maaserot-desktop",
+  "version": "1.0.0",
+  "description": "Maaserot Calculator Desktop App",
+  "author": "Your Name",
+  "main": "main.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development electron .",
+    "build": "pnpm run build:web && electron-builder --dir",
+    "build:web": "cd ../web && pnpm run build",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "31.2.1",
+    "cross-env": "^7.0.3",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.yourcompany.maaserotcalculator",
+    "files": [
+      "main.js",
+      "../web/out/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    }
+  }
+}
