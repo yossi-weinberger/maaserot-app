@@ -6,4 +6,8 @@ files:
   - filter:
       - main.js
       - ../web/out/**/*
+asar: false
+win:
+  target:
+    - portable
 electronVersion: 31.2.1

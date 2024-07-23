@@ -25,6 +25,12 @@
     ],
     "directories": {
       "output": "release"
+    },
+    "asar": false,
+    "win": {
+      "target": [
+        "portable"
+      ]
     }
   }
 }
