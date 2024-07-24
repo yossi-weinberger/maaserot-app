@@ -1,11 +1,16 @@
-import { ReactNode } from "react";
-import ElectronWrapper from "../app/components/ElectronWrapper";
+import { Metadata } from "next";
+import { ElectronWrapper } from "../app/components/ElectronWrapper";
 
-interface RootLayoutProps {
-  children: ReactNode;
-}
+export const metadata: Metadata = {
+  title: "מחשבון מעשרות",
+  description: "אפליקציית מחשבון מעשרות",
+};
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="he" dir="rtl">
       <body>
