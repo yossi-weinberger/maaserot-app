@@ -1,32 +1,30 @@
 {
   "name": "maaserot-desktop",
   "version": "1.0.0",
-  "type": "module",
   "main": "main.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development electron .",
     "build": "pnpm run build:web && electron-builder",
-    "build:web": "pnpm --filter web build",
+    "build:web": "cd ../web && pnpm run build",
     "start": "cross-env NODE_ENV=production electron .",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dev": "cross-env NODE_ENV=development electron ."
   },
   "build": {
     "appId": "com.yourcompany.maaserotcalculator",
     "files": [
       "main.js",
       "preload.js",
-      "../web/out/**/*"
+      "error.html"
+    ],
+    "extraResources": [
+      {
+        "from": "../web/out",
+        "to": "web/out"
+      }
     ],
     "directories": {
       "output": "release"
     },
-    "asar": false,
-    "win": {
-      "target": [
-        "portable"
-      ]
-    }
+    "asar": false
   },
   "devDependencies": {
     "electron": "31.2.1",
