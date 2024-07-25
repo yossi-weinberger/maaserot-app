@@ -4,7 +4,10 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**", ".next/**", "out/**"]
+    },
+    "build:desktop": {
+      "dependsOn": ["build"]
     },
     "dev": {
       "cache": false,

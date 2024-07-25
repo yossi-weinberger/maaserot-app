@@ -1,5 +1,6 @@
 import Link from "next/link";
-export default function Test(name: string) {
+type TestProps = {};
+export default function Test(props: TestProps) {
   return (
     <div>
       <Link href="/">back</Link>

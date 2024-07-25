@@ -26,7 +26,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "dist/types/**/*.ts"
+    "dist/types/**/*.ts",
+    "out/types/**/*.ts",
+    "app/components/ElectronOnly.jsx"
   ],
   "exclude": ["node_modules"]
 }

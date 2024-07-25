@@ -5,5 +5,10 @@ appId: com.yourcompany.maaserotcalculator
 files:
   - filter:
       - main.js
+      - preload.js
       - ../web/out/**/*
+asar: false
+win:
+  target:
+    - portable
 electronVersion: 31.2.1

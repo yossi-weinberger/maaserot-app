@@ -1,22 +1,56 @@
-import SharedComponent from "../app/components/SharedComponent";
-import WebOnlyComponent from "../app/components/WebOnlyComponent";
-import { ElectronOnly } from "../app/components/ElectronWrapper";
-import { WebOnly } from "../app/components/WebWrapper";
-import DesktopOnlyComponent from "../../../packages/ui/components/DesktopOnlyComponent";
-import Link from "next/link";
+"use client";
 
-export default function Home() {
+import React from "react";
+import { WebOnly } from "../app/components/WebOnly";
+import { ElectronOnly } from "../app/components/ElectronOnly";
+
+export default function ExamplePage() {
   return (
-    <div>
+    <div className="container">
       <h1>מחשבון מעשרות</h1>
-      <SharedComponent />
+
+      {/* תוכן משותף */}
+      <section>
+        <h2>תוכן משותף לווב ולדסקטופ</h2>
+        <p>
+          ברוכים הבאים למחשבון המעשרות. כאן תוכלו לחשב את המעשרות שלכם בקלות
+          ובמהירות.
+        </p>
+        <button>התחל חישוב</button>
+      </section>
+
+      {/* תוכן רק לווב */}
       <WebOnly>
-        <WebOnlyComponent />
+        <section>
+          <h2>תכונות ייחודיות לגרסת הווב</h2>
+          <ul>
+            <li>שמירה אוטומטית בענן</li>
+            <li>שיתוף חישובים עם אחרים</li>
+            <li>גישה מכל מכשיר</li>
+          </ul>
+          <a href="/login">התחבר לחשבון שלך</a>
+        </section>
       </WebOnly>
+
+      {/* תוכן רק לדסקטופ */}
       <ElectronOnly>
-        <DesktopOnlyComponent />
+        <section>
+          <h2>תכונות ייחודיות לגרסת הדסקטופ</h2>
+          <ul>
+            <li>עבודה ללא חיבור לאינטרנט</li>
+            <li>שמירה מקומית של נתונים</li>
+            <li>ייצוא דוחות למחשב</li>
+          </ul>
+          <button onClick={() => console.log("פתיחת הגדרות מקומיות")}>
+            פתח הגדרות מקומיות
+          </button>
+        </section>
       </ElectronOnly>
-      <Link href="/test">test</Link>
+
+      {/* תוכן משותף נוסף */}
+      <footer>
+        <p>© 2024 מחשבון מעשרות. כל הזכויות שמורות.</p>
+      </footer>
     </div>
   );
 }

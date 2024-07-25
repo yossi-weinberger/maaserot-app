@@ -1,6 +1,10 @@
-const { app, BrowserWindow } = require("electron");
-const path = require("path");
-const url = require("url");
+import { app, BrowserWindow } from "electron";
+import path from "path";
+import { fileURLToPath } from "url";
+import fs from "fs";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -10,24 +14,27 @@ function createWindow() {
       nodeIntegration: false,
       contextIsolation: true,
       preload: path.join(__dirname, "preload.js"),
+      // webSecurity: false // זה מסוכן בייצור, אבל יעזור לנו לדבג
     },
   });
 
-  const startUrl =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : url.format({
-          pathname: path.join(__dirname, "..", "web", "out", "index.html"),
-          protocol: "file:",
-          slashes: true,
-        });
-
-  win.loadURL(startUrl);
-
   if (process.env.NODE_ENV === "development") {
-    // win.webContents.openDevTools(); //openDevTools by default
+    win.loadURL("http://localhost:3000");
+  } else {
+    const indexPath = path.join(__dirname, "..", "web", "out", "index.html");
+    console.log("Trying to load:", indexPath);
+    if (fs.existsSync(indexPath)) {
+      win.loadFile(indexPath);
+    } else {
+      console.error("index.html not found at:", indexPath);
+      win.loadFile(path.join(__dirname, "error.html"));
+    }
   }
+
+  win.webContents.openDevTools();
 }
+
+app.whenReady().then(createWindow);
 
 app.whenReady().then(createWindow);
 
