@@ -6,7 +6,7 @@
     "build": "pnpm run build:web && electron-builder",
     "build:web": "cd ../web && pnpm run build",
     "start": "cross-env NODE_ENV=production electron .",
-    "dev": "cross-env NODE_ENV=development electron ."
+    "dev": "concurrently \"cd ../web && pnpm run dev\" \"wait-on http://localhost:3000 && cross-env NODE_ENV=development electron .\""
   },
   "build": {
     "appId": "com.yourcompany.maaserotcalculator",
@@ -29,6 +29,8 @@
   "devDependencies": {
     "electron": "31.2.1",
     "cross-env": "^7.0.3",
-    "electron-builder": "^24.13.3"
+    "electron-builder": "^24.13.3",
+    "concurrently": "^8.0.1",
+    "wait-on": "^7.0.1"
   }
 }
