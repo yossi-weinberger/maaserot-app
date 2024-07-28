@@ -2,6 +2,9 @@
 const nextConfig = {
   output: "export",
   distDir: "out",
+  images: { unoptimized: true },
+  trailingSlash: true,
+  basePath: "",
   assetPrefix: "./", // זה חשוב כדי שהנתיבים יהיו יחסיים
 };
 

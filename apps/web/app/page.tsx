@@ -3,6 +3,7 @@
 import React from "react";
 import { WebOnly } from "../app/components/WebOnly";
 import { ElectronOnly } from "../app/components/ElectronOnly";
+import Link from "next/link";
 
 export default function ExamplePage() {
   return (
@@ -17,6 +18,7 @@ export default function ExamplePage() {
           ובמהירות.
         </p>
         <button>התחל חישוב</button>
+        <Link href="/test">טסט</Link>
       </section>
 
       {/* תוכן רק לווב */}
@@ -29,6 +31,7 @@ export default function ExamplePage() {
             <li>גישה מכל מכשיר</li>
           </ul>
           <a href="/login">התחבר לחשבון שלך</a>
+          <Link href="/test">1טסט</Link>
         </section>
       </WebOnly>
 
@@ -44,6 +47,7 @@ export default function ExamplePage() {
           <button onClick={() => console.log("פתיחת הגדרות מקומיות")}>
             פתח הגדרות מקומיות
           </button>
+          <Link href="/test">2טסט</Link>
         </section>
       </ElectronOnly>
 
