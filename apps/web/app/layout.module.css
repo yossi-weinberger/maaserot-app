@@ -1,0 +1,22 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: var(--spacing-large);
+  margin-right: 16rem;
+  overflow-y: auto;
+}
+
+@media (max-width: 700px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .main {
+    margin-right: 0;
+    padding: var(--spacing-medium);
+  }
+}
