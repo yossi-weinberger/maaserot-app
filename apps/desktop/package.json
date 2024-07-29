@@ -17,6 +17,10 @@
     ],
     "extraResources": [
       {
+        "from": "../web/public",
+        "to": "public"
+      },
+      {
         "from": "../web/out",
         "to": "web/out"
       }

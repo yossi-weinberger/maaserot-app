@@ -37,6 +37,39 @@ function createWindow() {
     });
   }
 
+  // טיפול בקבצים סטטיים
+  protocol.registerFileProtocol("file", (request, callback) => {
+    const url = new URL(request.url);
+    let filePath = decodeURIComponent(url.pathname);
+
+    console.log("Original requested path:", filePath);
+
+    // Remove leading '/' for Windows
+    if (process.platform === "win32") {
+      filePath = filePath.slice(1);
+    }
+
+    if (filePath.startsWith("icons/") || filePath.startsWith("images/")) {
+      filePath = app.isPackaged
+        ? path.join(process.resourcesPath, "public", filePath)
+        : path.join(__dirname, "..", "web", "public", filePath);
+    } else {
+      filePath = app.isPackaged
+        ? path.join(process.resourcesPath, "web", "out", filePath)
+        : path.join(__dirname, "..", "web", "out", filePath);
+    }
+
+    console.log("Resolved file path:", filePath);
+
+    // בדיקה אם הקובץ קיים
+    if (fs.existsSync(filePath)) {
+      callback({ path: filePath });
+    } else {
+      console.error("File not found:", filePath);
+      callback({ error: -6 }); // FILE_NOT_FOUND
+    }
+  });
+
   console.log("Start URL:", startUrl);
   win.loadURL(startUrl);
 
@@ -47,33 +80,37 @@ function createWindow() {
     let pathname = parsedUrl.pathname;
     console.log("Navigating to:", pathname);
 
-    // הסרת ה-drive letter ו-leading slashes
-    pathname = pathname.replace(/^\/[A-Za-z]:/, "").replace(/^\/+/, "");
-
-    const filePath = path.join(
-      app.isPackaged ? process.resourcesPath : path.join(__dirname, ".."),
-      "web",
-      "out",
-      pathname,
-      "index.html"
-    );
-
-    console.log("Attempting to load file:", filePath);
-
-    if (fs.existsSync(filePath)) {
-      console.log("Loading file:", filePath);
-      win.loadFile(filePath);
+    if (process.env.NODE_ENV === "development") {
+      win.loadURL(`http://localhost:3000${pathname}`);
     } else {
-      console.error("File not found:", filePath);
-      console.log("Loading 404 page");
-      win.loadFile(
-        path.join(
-          app.isPackaged ? process.resourcesPath : path.join(__dirname, ".."),
-          "web",
-          "out",
-          "404.html"
-        )
+      // הסרת ה-drive letter ו-leading slashes
+      pathname = pathname.replace(/^\/[A-Za-z]:/, "").replace(/^\/+/, "");
+
+      const filePath = path.join(
+        app.isPackaged ? process.resourcesPath : path.join(__dirname, ".."),
+        "web",
+        "out",
+        pathname,
+        "index.html"
       );
+
+      console.log("Attempting to load file:", filePath);
+
+      if (fs.existsSync(filePath)) {
+        console.log("Loading file:", filePath);
+        win.loadFile(filePath);
+      } else {
+        console.error("File not found:", filePath);
+        console.log("Loading 404 page");
+        win.loadFile(
+          path.join(
+            app.isPackaged ? process.resourcesPath : path.join(__dirname, ".."),
+            "web",
+            "out",
+            "404.html"
+          )
+        );
+      }
     }
   });
 
@@ -91,16 +128,6 @@ function createWindow() {
 
 app.whenReady().then(() => {
   console.log("App is ready");
-  // רישום פרוטוקול מותאם אישית לטיפול בקבצים סטטיים
-  protocol.registerFileProtocol("file", (request, callback) => {
-    const filePath = url.fileURLToPath(
-      "file://" + request.url.slice("file://".length)
-    );
-    console.log("Custom protocol request:", request.url);
-    console.log("Resolved file path:", filePath);
-    callback({ path: filePath });
-  });
-
   createWindow();
 });
 
