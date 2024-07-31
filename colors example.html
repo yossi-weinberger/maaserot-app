@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>השוואת צבעים - בהיר וכהה</title>
+    <style>
+        :root {
+            --cream: #f5fffa;
+            --green: #3eb489;
+            --yellow: #eec643;
+            --gray: #b6b8be;
+            --dark: #250e04;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .color-comparison {
+            display: flex;
+            gap: 2rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .mode {
+            text-align: center;
+        }
+        .color-box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        h2 {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="color-comparison">
+        <div class="mode">
+            <h2>מצב בהיר</h2>
+            <div class="color-box" style="background-color: var(--cream);">רקע<br>#f5fffa</div>
+            <div class="color-box" style="background-color: var(--dark); color: var(--cream);">טקסט<br>#250e04</div>
+            <div class="color-box" style="background-color: var(--green);">ראשי<br>#3eb489</div>
+            <div class="color-box" style="background-color: var(--yellow);">משני<br>#eec643</div>
+            <div class="color-box" style="background-color: var(--gray);">דגש<br>#b6b8be</div>
+        </div>
+        <div class="mode">
+            <h2>מצב כהה</h2>
+            <div class="color-box" style="background-color: var(--dark); color: var(--cream);">רקע<br>#250e04</div>
+            <div class="color-box" style="background-color: var(--cream); color: var(--dark);">טקסט<br>#f5fffa</div>
+            <div class="color-box" style="background-color: var(--green);">ראשי<br>#3eb489</div>
+            <div class="color-box" style="background-color: var(--yellow);">משני<br>#eec643</div>
+            <div class="color-box" style="background-color: var(--gray);">דגש<br>#b6b8be</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -6,6 +6,10 @@ const nextConfig = {
   trailingSlash: true,
   basePath: "",
   assetPrefix: "./",
+  env: {
+    siteTitle: "מחשבון מעשרות",
+    siteDescription: "אפליקציית מחשבון מעשרות",
+  },
 };
 
 export default nextConfig;

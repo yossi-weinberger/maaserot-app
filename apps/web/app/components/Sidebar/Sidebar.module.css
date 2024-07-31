@@ -57,6 +57,21 @@
   margin-left: var(--spacing-small);
 }
 
+.themeToggle {
+  padding: 10px;
+  margin-top: 20px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.themeToggle:hover {
+  background-color: var(--secondary-color);
+}
+
 @media (max-width: 700px) {
   .sidebar {
     width: 100%;
