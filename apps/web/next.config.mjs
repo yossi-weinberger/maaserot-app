@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  output: "standalone",
   distDir: "out",
   images: { unoptimized: true },
   trailingSlash: true,
   basePath: "",
-  assetPrefix: "./",
+  assetPrefix: "",
+  cleanDistDir: true,
   env: {
     siteTitle: "מחשבון מעשרות",
     siteDescription: "אפליקציית מחשבון מעשרות",
@@ -21,7 +22,11 @@ export default nextConfig;
 //   images: { unoptimized: true },
 //   trailingSlash: true,
 //   basePath: "",
-//   assetPrefix: "./", // זה חשוב כדי שהנתיבים יהיו יחסיים
+//   assetPrefix: "./",
+//   env: {
+//     siteTitle: "מחשבון מעשרות",
+//     siteDescription: "אפליקציית מחשבון מעשרות",
+//   },
 // };
 
 // export default nextConfig;

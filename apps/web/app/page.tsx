@@ -18,7 +18,11 @@ export default function ExamplePage() {
           ובמהירות.
         </p>
         <button>התחל חישוב</button>
-        <Link href="/test">טסט</Link>
+        <Link href="/test" prefetch={false}>
+          טסט
+        </Link>
+        <Link href="/test3">3טסט</Link>
+        <Link href="/404">3טסט</Link>
       </section>
 
       {/* תוכן רק לווב */}
