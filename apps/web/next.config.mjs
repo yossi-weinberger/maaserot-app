@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
+  output: "export",
   distDir: "out",
   images: { unoptimized: true },
   trailingSlash: true,
   basePath: "",
-  assetPrefix: "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "./" : "",
   cleanDistDir: true,
   env: {
     siteTitle: "מחשבון מעשרות",
@@ -14,6 +14,57 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   output: "export",
+//   distDir: "out",
+//   images: { unoptimized: true },
+//   trailingSlash: true,
+//   basePath: "",
+//   assetPrefix: process.env.NODE_ENV === "production" ? "./" : "",
+//   cleanDistDir: true,
+//   env: {
+//     siteTitle: "מחשבון מעשרות",
+//     siteDescription: "אפליקציית מחשבון מעשרות",
+//   },
+// };
+
+// export default nextConfig;
+
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   output: "export",
+//   distDir: "out",
+//   images: { unoptimized: true },
+//   trailingSlash: true,
+//   basePath: "",
+//   assetPrefix: process.env.NODE_ENV === "production" ? "./" : "",
+//   cleanDistDir: true,
+//   env: {
+//     siteTitle: "מחשבון מעשרות",
+//     siteDescription: "אפליקציית מחשבון מעשרות",
+//   },
+// };
+
+// export default nextConfig;
+
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   output: "standalone",
+//   distDir: "out",
+//   images: { unoptimized: true },
+//   trailingSlash: true,
+//   basePath: "",
+//   assetPrefix: "",
+//   cleanDistDir: true,
+//   env: {
+//     siteTitle: "מחשבון מעשרות",
+//     siteDescription: "אפליקציית מחשבון מעשרות",
+//   },
+// };
+
+// export default nextConfig;
 
 // /** @type {import('next').NextConfig} */
 // const nextConfig = {
